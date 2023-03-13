@@ -1,0 +1,47 @@
+{% extends "teamapp/team_base.html" %}
+{% block body_block %}
+<!-- <style>
+  body {
+    background-image: url("https://images.alphacoders.com/442/442879.jpg");
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+  }
+  </style>
+  <style>
+    th, td {
+      border-style: solid;
+    }
+    </style> -->
+  <h1>Welcome to the List of Batsmen Page!</h1>
+  <h4>Here is the list of all the batters:</h4>
+
+  <table class="table table-striped">
+    <thead>
+      <th>Batter ID</th>
+      <th>Player Name</th>
+      <th>No. of matches</th>
+      <th>Total Runs</th>
+      <th>Total Balls</th>
+      <th>Average</th>
+      <th>Strike Rate</th>
+      <th>Fifties</th>
+      <th>Hundreds</th>
+    </thead>
+    {% for bat in allbatter %}
+    <tr>
+      <td>{{ bat.batsman_id }}</td>
+      <td>{{ bat.batsman_name }}</td>
+      <td>{{ bat.no_matches }}</td>
+      <td>{{ bat.total_runs }}</td>
+      <td>{{ bat.total_balls }}</td>
+      <td>{{ bat.average }}</td>
+      <td>{{ bat.strike_rate }}</td>
+      <td>{{ bat.fifties }}</td>
+      <td>{{ bat.hundreds }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+{% endblock %}

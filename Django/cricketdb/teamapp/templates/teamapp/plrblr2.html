@@ -1,0 +1,53 @@
+{% extends "teamapp/team_base.html" %}
+{% block body_block %}
+  {% for plr in allplayer %}
+  {% if plr.player_name == form %}
+  <table class="table table-striped">
+    <thead>
+      <th>Player ID</th>
+      <th>Player Name</th>
+      <th>Age</th>
+      <th>Role</th>
+      <th>Nationality</th>
+    </thead>
+    <tr>
+      <td>{{ plr.player_id }}</td>
+      <td>{{ plr.player_name }}</td>
+      <td>{{ plr.age }}</td>
+      <td>{{ plr.role }}</td>
+      <td>{{ plr.nationality }}</td>
+    </tr>
+  </table>
+  {% endif %}
+  {% endfor %}
+  {% for ball in allbowler %}
+  {% if ball.real_name == form %}
+  <table class="table table-striped">
+    <thead>
+      <th>Bowler ID</th>
+      <th>Player Name</th>
+      <th>No. of matches</th>
+      <th>Total Runs</th>
+      <th>Total Balls</th>
+      <th>Total Wickets</th>
+      <th>Average</th>
+      <th>Economy</th>
+      <th>4w hauls</th>
+      <th>5w hauls</th>
+    </thead>
+    <tr>
+      <td>{{ ball.bowler_id }}</td>
+      <td>{{ ball.bowler_name }}</td>
+      <td>{{ ball.no_matches }}</td>
+      <td>{{ ball.total_runs }}</td>
+      <td>{{ ball.total_balls }}</td>
+      <td>{{ ball.total_wickets }}</td>
+      <td>{{ ball.average }}</td>
+      <td>{{ ball.economy }}</td>
+      <td>{{ ball.fourhauls }}</td>
+      <td>{{ ball.fivehauls }}</td>
+    </tr>
+  </table>
+  {% endif %}
+  {% endfor %}
+{% endblock %}

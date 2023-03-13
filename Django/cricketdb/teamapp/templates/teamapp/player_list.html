@@ -1,0 +1,27 @@
+{% extends "teamapp/team_base.html" %}
+{% block body_block %}
+
+  <h1>Welcome to the List of PLAYERS!</h1>
+  <h4>Here is the list of all the matches:</h4>
+
+  <table class="table table-striped">
+    <thead>
+      <th>Player ID</th>
+      <th>Player Name</th>
+      <th>Age</th>
+      <th>Role</th>
+      <th>Nationality</th>
+    </thead>
+    {% for plr in allplayer %}
+    <tr>
+      <td>{{ plr.player_id }}</td>
+      <td>{{ plr.player_name }}</td>
+      <td>{{ plr.age }}</td>
+      <td>{{ plr.role }}</td>
+      <td>{{ plr.nationality }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+{% endblock %}

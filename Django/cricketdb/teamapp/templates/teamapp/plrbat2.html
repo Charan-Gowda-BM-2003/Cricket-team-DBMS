@@ -1,0 +1,51 @@
+{% extends "teamapp/team_base.html" %}
+{% block body_block %}
+  {% for plr in allplayer %}
+  {% if plr.player_name == form %}
+  <table class="table table-striped">
+    <thead>
+      <th>Player ID</th>
+      <th>Player Name</th>
+      <th>Age</th>
+      <th>Role</th>
+      <th>Nationality</th>
+    </thead>
+    <tr>
+      <td>{{ plr.player_id }}</td>
+      <td>{{ plr.player_name }}</td>
+      <td>{{ plr.age }}</td>
+      <td>{{ plr.role }}</td>
+      <td>{{ plr.nationality }}</td>
+    </tr>
+  </table>
+  {% endif %}
+  {% endfor %}
+  {% for bat in allbatter %}
+  {% if bat.real_name == form %}
+  <table class="table table-striped">
+    <thead>
+      <th>Batter ID</th>
+      <th>Player Name</th>
+      <th>No. of matches</th>
+      <th>Total Runs</th>
+      <th>Total Balls</th>
+      <th>Average</th>
+      <th>Strike Rate</th>
+      <th>Fifties</th>
+      <th>Hundreds</th>
+    </thead>
+    <tr>
+      <td>{{ bat.batsman_id }}</td>
+      <td>{{ bat.batsman_name }}</td>
+      <td>{{ bat.no_matches }}</td>
+      <td>{{ bat.total_runs }}</td>
+      <td>{{ bat.total_balls }}</td>
+      <td>{{ bat.average }}</td>
+      <td>{{ bat.strike_rate }}</td>
+      <td>{{ bat.fifties }}</td>
+      <td>{{ bat.hundreds }}</td>
+    </tr>
+  </table>
+  {% endif %}
+  {% endfor %}
+{% endblock %}

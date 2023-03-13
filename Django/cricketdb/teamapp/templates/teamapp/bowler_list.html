@@ -1,0 +1,37 @@
+{% extends "teamapp/team_base.html" %}
+{% block body_block %}
+
+  <h1>Welcome to the List of Bowlers Page!</h1>
+  <h4>Here is the list of all the bowlers:</h4>
+
+  <table class="table table-striped">
+    <thead>
+      <th>Bowler ID</th>
+      <th>Player Name</th>
+      <th>No. of matches</th>
+      <th>Total Runs</th>
+      <th>Total Balls</th>
+      <th>Total Wickets</th>
+      <th>Average</th>
+      <th>Economy</th>
+      <th>4w hauls</th>
+      <th>5w hauls</th>
+    </thead>
+    {% for ball in allbowler %}
+    <tr>
+      <td>{{ ball.bowler_id }}</td>
+      <td>{{ ball.bowler_name }}</td>
+      <td>{{ ball.no_matches }}</td>
+      <td>{{ ball.total_runs }}</td>
+      <td>{{ ball.total_balls }}</td>
+      <td>{{ ball.total_wickets }}</td>
+      <td>{{ ball.average }}</td>
+      <td>{{ ball.economy }}</td>
+      <td>{{ ball.fourhauls }}</td>
+      <td>{{ ball.fivehauls }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+{% endblock %}

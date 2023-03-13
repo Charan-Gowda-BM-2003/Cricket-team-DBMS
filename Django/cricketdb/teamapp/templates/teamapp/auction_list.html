@@ -1,0 +1,27 @@
+{% extends "teamapp/team_base.html" %}
+{% block body_block %}
+
+  <h1>Welcome to the List of Auctions Page!</h1>
+  <h4>Here is the list of all the auctions:</h4>
+
+  <table class="table table-striped">
+    <thead>
+      <th>Auction ID</th>
+      <th>Player Name</th>
+      <th>Bought Price (in $)</th>
+      <th>Sold Price (in $)</th>
+      <th>Player Status</th>
+    </thead>
+    {% for auc in allauctions %}
+    <tr>
+      <td>{{ auc.auction_id }}</td>
+      <td>{{ auc.player_name }}</td>
+      <td>{{ auc.bought_price }}</td>
+      <td>{{ auc.sold_price }}</td>
+      <td>{{ auc.player_status }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+{% endblock %}

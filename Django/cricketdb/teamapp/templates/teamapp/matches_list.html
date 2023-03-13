@@ -1,0 +1,27 @@
+{% extends "teamapp/team_base.html" %}
+{% block body_block %}
+
+  <h1>Welcome to the List of Matches Page!</h1>
+  <h4>Here is the list of all the matches:</h4>
+
+  <table class="table table-striped">
+    <thead>
+      <th>Match ID</th>
+      <th>Opponent Team Name</th>
+      <th>Match Date</th>
+      <th>Result</th>
+      <th>Venue</th>
+    </thead>
+    {% for mat in allmatches %}
+    <tr>
+      <td>{{ mat.match_id }}</td>
+      <td>{{ mat.opponent_name }}</td>
+      <td>{{ mat.match_date }}</td>
+      <td>{{ mat.result }}</td>
+      <td>{{ mat.match_venue }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+{% endblock %}
