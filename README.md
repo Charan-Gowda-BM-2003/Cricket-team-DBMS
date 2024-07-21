@@ -1,6 +1,6 @@
 # Cricket-team-DBMS
 
-Sure, I'll provide you with a sample README file for a Cricket Database Management System using Django and SQL:
+
 
 Cricket Database Management System
 This project implements a Cricket Database Management System using Django and SQL. The system manages information related to cricket players, teams, and matches.
